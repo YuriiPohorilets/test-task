@@ -1,0 +1,58 @@
+:root {
+  --color-primary: #000000;
+  --color-accent: #ffb800;
+  --color-background: #fbfbfb;
+
+  --font-primary: 'Roboto';
+  --font-accent: 'Bebas Neue', sans-serif;
+}
+
+body {
+  font-family: var(--font-primary, 'Roboto'), -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-block-size: 100svh;
+
+  text-rendering: optimizeSpeed;
+  color: var(--color-primary, #000000);
+  font-size: 1.125rem;
+  line-height: normal;
+  font-weight: 400;
+
+  background-color: var(--color-background, #fbfbfb);
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+.hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.section {
+  padding-block: 9.375rem;
+  block-size: 100%;
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-inline-size: calc(71.25rem + 2rem * 2);
+
+  @media screen and (min-width: 768px) {
+    padding-inline: 2rem;
+  }
+}
