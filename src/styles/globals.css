@@ -1,10 +1,20 @@
 :root {
   --color-primary: #000000;
+  --color-secondary: #929292;
   --color-accent: #ffb800;
   --color-background: #fbfbfb;
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  --color-arrow: #3683f7;
+  --color-card-bg: #f3f5f6;
 
   --font-primary: 'Roboto';
   --font-accent: 'Bebas Neue', sans-serif;
+
+  --shadow-basic: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+
+  --duration-sm: 250ms;
+  --easing-basic: ease-in-out;
 }
 
 body {
@@ -54,5 +64,215 @@ body {
 
   @media screen and (min-width: 768px) {
     padding-inline: 2rem;
+  }
+}
+
+.header {
+  padding-block-start: 0.6875rem;
+  padding-block-end: 0.5rem;
+  background-color: var(--color-dark, #000000);
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+
+  color: var(--color-light, #ffffff);
+}
+
+.logo__content {
+  font-size: 1.3125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: calc(25 / 21);
+}
+
+.logo__content--accent {
+  color: var(--color-accent, #ffb800);
+}
+
+.logo__divider {
+  block-size: 1.875rem;
+  inline-size: 0.0625rem;
+
+  background-color: currentColor;
+}
+
+.footer {
+  padding-block-start: 0.5rem;
+  padding-block-end: 0.625rem;
+
+  background-color: var(--color-dark, #000000);
+}
+
+.footer__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyright {
+  color: var(--color-light, #ffffff);
+  font-size: 0.875rem;
+  line-height: 1.929;
+}
+
+.button {
+  position: relative;
+
+  padding-inline: 0.625rem;
+  padding-block: 0.625rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-light, #ffffff);
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: 6.25rem;
+
+  background: linear-gradient(
+    0deg,
+    #130999 -0%,
+    #174d8f 35%,
+    #1a7f87 65%,
+    #1c9e83 87%,
+    #1daa81 100%
+  );
+
+  transition: scale var(--duration-sm, 250ms) var(--easing-basic, ease-in-out);
+
+  cursor: pointer;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  inline-size: 100%;
+  block-size: 100%;
+
+  border-radius: inherit;
+  box-shadow: var(--shadow-basic, 0px 0px 4px 0px rgba(0, 0, 0, 0.25));
+  opacity: 0;
+
+  transition: opacity var(--duration-sm, 250ms) var(--easing-basic, ease-in-out);
+  pointer-events: none;
+}
+
+.button:is(:hover, :focus-visible) {
+  scale: 1.02;
+}
+
+.button:is(:active) {
+  scale: 0.98;
+}
+
+.button:is(:hover, :focus-visible)::before {
+  opacity: 1;
+}
+
+.downloaded-arrow {
+  position: fixed;
+  z-index: 900;
+
+  display: block;
+  padding-inline: 1.5rem;
+
+  background-color: #3683f7;
+  box-shadow: var(--shadow-basic, 0px 4px 4px 0px rgba(0, 0, 0, 0.25));
+  visibility: hidden;
+  opacity: 0;
+
+  transition: visibility var(--duration-sm, 250ms) var(--easing-basic, ease-in-out),
+    opacity var(--duration-sm, 250ms) var(--easing-basic, ease-in-out);
+}
+
+.downloaded-arrow.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.downloaded-arrow--bottom-start {
+  inset-inline-start: 0.75rem;
+  inset-block-end: 0;
+
+  padding-block-start: 2rem;
+  padding-block-end: 4rem;
+
+  clip-path: polygon(0% 0%, 100% 0, 100% 73%, 50% 100%, 0 73%);
+  animation: dragUp 2000ms ease-in-out infinite;
+}
+
+.downloaded-arrow--top-end {
+  inset-inline-end: 0.75rem;
+  inset-block-start: 0;
+
+  padding-block-start: 4rem;
+  padding-block-end: 2rem;
+
+  clip-path: polygon(0 100%, 100% 100%, 100% 27%, 50% 0, 0 27%);
+  animation: dragDown 2000ms ease-in-out infinite;
+}
+
+.downloaded-arrow__title {
+  color: var(--color-light, #ffffff);
+  text-align: center;
+  font-family: var(--font-accent, 'Bebas Neue');
+  font-size: 4.5rem;
+}
+
+.downloaded-arrow__subtitle {
+  color: var(--color-light, #ffffff);
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 2;
+}
+
+.status {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.status--error {
+  color: tomato;
+}
+
+.status--loading {
+  text-transform: uppercase;
+}
+@keyframes dragUp {
+  0%,
+  100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes dragDown {
+  0%,
+  100% {
+    transform: translateY(8px);
+  }
+  50% {
+    transform: translateY(0);
   }
 }

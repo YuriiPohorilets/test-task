@@ -1,0 +1,158 @@
+.products__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+}
+
+.products__title {
+  color: var(--color-dark, #000000);
+  text-align: center;
+  font-family: var(--font-accent, 'Bebas Neue', sans-serif);
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.products__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.875rem;
+}
+
+.products__item {
+  flex: 1;
+  min-inline-size: 17.5rem;
+  max-inline-size: 22.5rem;
+}
+
+.product {
+  padding-inline: 1.875rem;
+  padding-block-end: 1.625rem;
+
+  background: linear-gradient(
+    0deg,
+    var(--color-card-bg, #f3f5f6),
+    var(--color-card-bg, #f3f5f6) calc(100% - 3.125rem),
+    transparent calc(100% - 3.125rem),
+    transparent
+  );
+}
+
+.product__thumb {
+  position: relative;
+
+  margin-inline: auto;
+  margin-block-end: 1.25rem;
+  padding-block-start: 1.875rem;
+  padding-block-end: 0.125rem;
+  padding-inline: 1rem;
+
+  inline-size: calc(100% - 1.875rem * 2);
+  block-size: 6.25rem;
+
+  background-color: var(--color-light, #ffffff);
+  box-shadow: var(--shadow-basic, 0px 0px 4px 0px rgba(0, 0, 0, 0.25));
+}
+
+.product__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product__value {
+  color: var(--color-dark, #000000);
+  text-align: center;
+  font-family: var(--font-accent, 'Bebas Neue', sans-serif);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.product__oldValue {
+  display: block;
+  margin-inline: auto;
+  margin-block-start: -0.4375rem;
+
+  color: var(--color-secondary, #929292);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.product__duration {
+  color: var(--color-dark, #000000);
+  font-family: var(--font-accent, 'Bebas Neue', sans-serif);
+  font-size: 1.125rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.product__badge {
+  position: absolute;
+  inset-block-start: 0;
+}
+
+.product__badge--best {
+  inset-inline-end: 0;
+
+  padding-inline: 0.6875rem;
+  padding-block-start: 0.25rem;
+  padding-block-end: 0.125rem;
+
+  color: #2b2929;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  background-color: var(--color-accent, #ffb800);
+}
+
+.product__badge--discount {
+  inset-inline-start: -14px;
+  inset-block-start: -14px;
+
+  block-size: 6.25rem;
+  inline-size: 6.25rem;
+
+  background: url('../assets/icons/discount.svg');
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.product__info {
+  margin-block-end: 2rem;
+
+  color: var(--color-dark, #000000);
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+.product__title {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.product__subtitle {
+  font-weight: 700;
+}
+
+.product__button {
+  margin-inline: auto;
+  padding-inline-start: 2.25rem;
+  gap: 1rem;
+}
+
+.product__button::after {
+  content: '';
+
+  block-size: 1.875rem;
+  inline-size: 1.875rem;
+
+  background-image: url('../assets/icons/download.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

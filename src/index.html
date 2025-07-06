@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/products.css" />
 
     <title>Test task - Yurii Pohorilets</title>
     <meta name="description" content="Test task" />
@@ -26,18 +27,44 @@
 
   <body>
     <header class="header">
-      <div class="container"></div>
+      <div class="container">
+        <div class="header__wrapper">
+          <span class="logo">
+            <span class="logo__content logo__content--accent">Top antivirus</span>
+            <span class="logo__divider"></span>
+            <span class="logo__content">PC APP Store&trade;</span>
+          </span>
+        </div>
+      </div>
     </header>
 
     <main>
-      <section class="section products" id="products">
-        <div class="container"></div>
+      <section id="products" class="section products">
+        <div class="container">
+          <div class="products__wrapper">
+            <h1 class="hidden">Top antivirus products</h1>
+            <span class="products__title">Thank you for choosing our product!</span>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container"></div>
+      <div class="container">
+        <div class="footer__wrapper">
+          <span class="logo">
+            <span class="logo__content logo__content--accent">Top antivirus</span>
+          </span>
+
+          <span class="copyright">Copyright &copy; </span>
+        </div>
+      </div>
     </footer>
+
+    <div class="downloaded-arrow" role="alert" aria-live="polite">
+      <div class="downloaded-arrow__title">Open</div>
+      <div class="downloaded-arrow__subtitle">your downloaded file</div>
+    </div>
 
     <script type="module" src="./index.js"></script>
   </body>
